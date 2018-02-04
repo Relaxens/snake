@@ -11,13 +11,9 @@ namespace snake1
         static void Main(string[] args)
         {
             Console.SetBufferSize(80, 25);
-
-            Point p1= new Point(1,3,'*');
-
-            p1.Drow();
-
-            HorizontalLine upLine = new HorizontalLine(0,78,0,'*');
-            HorizontalLine downLine = new HorizontalLine(0, 78,24, '*');
+            
+            HorizontalLine upLine = new HorizontalLine(0,78,0,'+');
+            HorizontalLine downLine = new HorizontalLine(0, 78,24, '+');
             VerticalLine leftLine = new VerticalLine(0, 24, 78, '+');
             VerticalLine rightLine = new VerticalLine(0,24,0,'+');
             downLine.Drow();
@@ -25,6 +21,9 @@ namespace snake1
             leftLine.Drow();
             rightLine.Drow();
 
+            Point p = new Point(4, 5, '*');
+            Snake snake = new Snake(p,5,Direction.RIGHT);
+            snake.Drow();
             Console.ReadLine();
         }
     }

@@ -14,7 +14,7 @@ namespace snake1
         {
             foreach (Point p in pList)
             {
-                p.Drow();
+                p.Draw();
             }
         }
     }
