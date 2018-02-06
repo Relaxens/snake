@@ -17,17 +17,32 @@ namespace snake1
             HorizontalLine downLine = new HorizontalLine(0, 78,24, '+');
             VerticalLine leftLine = new VerticalLine(0, 24, 78, '+');
             VerticalLine rightLine = new VerticalLine(0,24,0,'+');
-            downLine.Drow();
-            upLine.Drow();
-            leftLine.Drow();
-            rightLine.Drow();
+            downLine.Draw();
+            upLine.Draw();
+            leftLine.Draw();
+            rightLine.Draw();
 
             Point p = new Point(4, 5, '*');
             Snake snake = new Snake(p,4,Direction.RIGHT);
-            snake.Drow();
+            snake.Draw();
+
+            FoodCreator foodCreator = new FoodCreator(80, 25, '$');
+            Point food = foodCreator.CreateFood();
+            food.Draw();
 
             while (true)
             {
+                if (snake.Eat(food))
+                {
+                    food = foodCreator.CreateFood();
+                    food.Draw();
+                }
+                else
+                {
+                    snake.Move();
+                }
+                Thread.Sleep(100);
+          
                 if (Console.KeyAvailable)
                 {
                     ConsoleKeyInfo key = Console.ReadKey();
