@@ -17,7 +17,12 @@ namespace snake1
                 pList.Add(p);
             }
         }
-               
-     }
+        public override void Draw()
+        {
+            base.Draw();
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+        }
+
+    }
 }
 
