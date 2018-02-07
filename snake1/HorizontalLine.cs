@@ -20,7 +20,7 @@ namespace snake1
         public override void Draw()
         {
             base.Draw();
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.ForegroundColor = ConsoleColor.White;
         }
 
     }
